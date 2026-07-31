@@ -10,6 +10,8 @@ import javax.swing.border.Border;
 import java.awt.Dimension;
 
 import musicplayer.ui.components.FolderPanel;
+import musicplayer.ui.components.PlaylistPanel;
+
 
 
 
@@ -24,6 +26,9 @@ public class SidebarPanel extends JPanel {
         setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
         
         add(new FolderPanel());
+
+        add(new PlaylistPanel());
+        
     }
     
 }
