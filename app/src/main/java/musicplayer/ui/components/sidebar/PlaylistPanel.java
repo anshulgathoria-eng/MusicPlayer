@@ -1,6 +1,6 @@
-package musicplayer.ui.components;
+package musicplayer.ui.components.sidebar;
 
-import musicplayer.ui.components.RoundedPanel;
+import musicplayer.ui.components.common.RoundedPanel;
 import musicplayer.utils.FontManager;
 import musicplayer.utils.IconManager;
 

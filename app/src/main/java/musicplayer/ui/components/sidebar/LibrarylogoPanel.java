@@ -1,4 +1,4 @@
-package musicplayer.ui.components;
+package musicplayer.ui.components.sidebar;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;

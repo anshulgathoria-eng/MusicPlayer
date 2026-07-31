@@ -1,4 +1,4 @@
-package musicplayer.ui.components;
+package musicplayer.ui.components.common;
 
 import java.security.PublicKey;
 

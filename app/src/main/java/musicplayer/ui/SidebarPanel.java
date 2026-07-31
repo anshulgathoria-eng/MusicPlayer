@@ -11,9 +11,9 @@ import javax.swing.border.Border;
 
 import java.awt.Dimension;
 
-import musicplayer.ui.components.FolderPanel;
-import musicplayer.ui.components.LibrarylogoPanel;
-import musicplayer.ui.components.PlaylistPanel;
+import musicplayer.ui.components.sidebar.FolderPanel;
+import musicplayer.ui.components.sidebar.LibrarylogoPanel;
+import musicplayer.ui.components.sidebar.PlaylistPanel;
 
 import musicplayer.utils.FontManager;
 
