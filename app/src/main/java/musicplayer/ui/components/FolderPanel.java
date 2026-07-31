@@ -42,6 +42,7 @@ public class FolderPanel extends RoundedPanel {
 
         setBackground(new Color(217,217,217));
         setPreferredSize(new Dimension(249,40));
+        setMaximumSize(new Dimension(249, 40));
         
         setLayout(new BorderLayout());
         
