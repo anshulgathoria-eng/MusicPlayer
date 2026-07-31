@@ -1,7 +1,7 @@
 package musicplayer.ui.components;
 
 import musicplayer.ui.components.RoundedPanel;
-
+import musicplayer.utils.IconManager;
 
 import java.awt.Color;
 
@@ -57,9 +57,9 @@ public class FolderPanel extends RoundedPanel {
         folderLabel.setForeground(Color.BLACK);
        
         
-       FlatSVGIcon folderIcon = new FlatSVGIcon("assets/icons/folder.svg", 24, 24);
+       
 
-        JLabel iconLabel = new JLabel(folderIcon);
+        JLabel iconLabel = new JLabel(IconManager.get("folder",24));
          
         iconLabel.setBorder(BorderFactory.createEmptyBorder(0,0,0,10));
         add(iconLabel, BorderLayout.EAST);   
