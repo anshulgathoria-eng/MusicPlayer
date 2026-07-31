@@ -1,6 +1,7 @@
 package musicplayer.ui.components;
 
 import musicplayer.ui.components.RoundedPanel;
+import musicplayer.utils.FontManager;
 import musicplayer.utils.IconManager;
 
 import java.awt.BorderLayout;
@@ -40,7 +41,7 @@ public class PlaylistPanel extends RoundedPanel {
         playlistLabel.setBorder(BorderFactory.createEmptyBorder(0,10,0,0));
 
         
-        playlistLabel.setFont(new Font("Inter", Font.BOLD, 13));
+        playlistLabel.setFont(FontManager.regular(13));
         add(playlistLabel,BorderLayout.WEST);
         
         playlistLabel.setForeground(Color.BLACK);
