@@ -57,11 +57,14 @@ public class FolderPanel extends RoundedPanel {
         folderLabel.setForeground(Color.BLACK);
        
         
-       FlatSVGIcon folderIcon = new FlatSVGIcon("assets/icons/disc.svg", 24, 24);
+       FlatSVGIcon folderIcon = new FlatSVGIcon("assets/icons/folder.svg", 24, 24);
 
         JLabel iconLabel = new JLabel(folderIcon);
-
+         
+        iconLabel.setBorder(BorderFactory.createEmptyBorder(0,0,0,10));
         add(iconLabel, BorderLayout.EAST);   
+
+        
         
                          
 
