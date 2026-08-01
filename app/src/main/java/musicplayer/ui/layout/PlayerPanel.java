@@ -1,4 +1,4 @@
-package musicplayer.ui;
+package musicplayer.ui.layout;
 
 import javax.swing.JPanel;
 
@@ -13,7 +13,7 @@ public class PlayerPanel extends JPanel{
 
     public PlayerPanel(){
 
-        setBackground(Color.RED);
+        setBackground(Color.white);
 
         setPreferredSize(new Dimension(0,130));
     }

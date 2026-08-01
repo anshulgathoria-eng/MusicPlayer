@@ -2,7 +2,7 @@ package musicplayer.ui;
 
 import javax.swing.JFrame;
 
-import java.awt.BorderLayout;
+
 
 
 
@@ -19,10 +19,8 @@ public class MainFrame extends JFrame {
          
         //panels 
 
-        setLayout(new BorderLayout());
-        add(new SidebarPanel(),BorderLayout.WEST);
-        add(new ContentPanel(), BorderLayout.CENTER);
-        add(new PlayerPanel(), BorderLayout.SOUTH);
+        
+        add(new MainPanel());
         setVisible(true);
          
 

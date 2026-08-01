@@ -1,4 +1,4 @@
-package musicplayer.ui;
+package musicplayer.ui.layout;
 
 
 import java.awt.BorderLayout;
