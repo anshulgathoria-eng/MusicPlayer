@@ -3,7 +3,7 @@ package musicplayer.ui.layout;
 import javax.swing.JPanel;
 
 
-import musicplayer.ui.components.playlist.PlaylistViewPanel;
+import musicplayer.ui.views.PlaylistViewPanel;
 
 import java.awt.Color;
 

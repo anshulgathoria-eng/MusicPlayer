@@ -12,6 +12,7 @@ public class FontManager {
     private static Font medium;
     private static Font semiBold;
     private static Font bold;
+    private static Font light;
 
 
     private static Font loadFont(String path) {
@@ -39,6 +40,8 @@ public class FontManager {
 
     bold = loadFont("/assets/fonts/Inter-Bold.ttf");
 
+    light = loadFont("/assets/fonts/Inter-Light.ttf");
+
    }
 
    public static Font regular(float size) {
@@ -56,6 +59,11 @@ public class FontManager {
     public static Font bold(float size) {
     return bold.deriveFont(size);
     }
+
+    public static Font light(float size) {
+    return light.deriveFont(size);
+    }
+    
 
 
 

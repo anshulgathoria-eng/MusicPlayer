@@ -10,6 +10,9 @@ import musicplayer.utils.FontManager;
 
 import java.awt.BorderLayout;
 
+import javax.swing.BorderFactory;
+
+
 
 
 public class PlaylistHeaderPanel extends JPanel {
@@ -27,6 +30,9 @@ public class PlaylistHeaderPanel extends JPanel {
         
 
         add(PlaylistName, BorderLayout.WEST);
+
+        setBorder(BorderFactory.createEmptyBorder(0,0,30,0));
+
 
 
 
