@@ -4,7 +4,7 @@ import musicplayer.ui.components.playlist.PlaylistColumnHeaderPanel;
 import musicplayer.ui.components.playlist.PlaylistHeaderPanel;
 import musicplayer.ui.components.playlist.SongRowPanel;
 import musicplayer.ui.layout.SongListPanel;
-
+import musicplayer.ui.components.common.ModernScrollBarUI;
 import javax.swing.JPanel;
 
 import java.awt.Color;
@@ -15,6 +15,9 @@ import javax.swing.BorderFactory;
 
 
 import musicplayer.utils.FontManager;
+
+import javax.swing.JScrollPane;
+
 
 
 
@@ -43,8 +46,32 @@ public class PlaylistViewPanel extends JPanel {
        
 
         add(topPanel, BorderLayout.NORTH);
-        add(new SongListPanel(), BorderLayout.CENTER);
+        
+        //created an object here
 
+        SongListPanel songListPanel = new SongListPanel();
+        
+        // passed it to the scrollapne 
+
+        JScrollPane scrollPane = new JScrollPane(songListPanel);
+        scrollPane.getVerticalScrollBar().setUI(new ModernScrollBarUI());
+        // enables scrollbar only when needed
+
+        scrollPane.setVerticalScrollBarPolicy(
+          JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED
+        );
+        
+        // never enables the horizontal scrolling 
+
+        scrollPane.setHorizontalScrollBarPolicy(
+           JScrollPane.HORIZONTAL_SCROLLBAR_NEVER
+        );
+
+        scrollPane.setBorder(null);
+
+        scrollPane.getViewport().setBackground(Color.WHITE);
+
+        add(scrollPane, BorderLayout.CENTER);
 
        
 

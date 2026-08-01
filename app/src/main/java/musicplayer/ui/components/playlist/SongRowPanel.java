@@ -36,6 +36,8 @@ public class SongRowPanel extends RoundedPanel{
     public SongRowPanel(){
      
         super(11);
+        
+        //not working for some reason 
 
         setBackground(new Color(217,217,217));
 
