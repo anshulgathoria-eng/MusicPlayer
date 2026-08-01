@@ -36,7 +36,7 @@ public class SongRowPanel extends RoundedPanel{
     public SongRowPanel(){
      
         super(11);
-        
+
         //not working for some reason 
 
         setBackground(new Color(217,217,217));
@@ -51,7 +51,7 @@ public class SongRowPanel extends RoundedPanel{
 
         JLabel song = new JLabel("In the End");
         song.setFont(FontManager.light(fs));
-        JLabel artist = new JLabel("Linkin Park");
+        JLabel artist = new JLabel("Ans");
         artist.setFont(FontManager.light(fs));
 
         JLabel album = new JLabel("Hybrid Theory");
@@ -60,7 +60,7 @@ public class SongRowPanel extends RoundedPanel{
 
         JLabel duration = new JLabel("03:36");
         duration.setFont(FontManager.light(fs));
-        duration.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 30));
+       // duration.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 30));
 
 
         
