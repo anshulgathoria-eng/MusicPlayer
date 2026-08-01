@@ -2,6 +2,8 @@ package musicplayer.ui.views;
 
 import musicplayer.ui.components.playlist.PlaylistColumnHeaderPanel;
 import musicplayer.ui.components.playlist.PlaylistHeaderPanel;
+import musicplayer.ui.components.playlist.SongRowPanel;
+import musicplayer.ui.layout.SongListPanel;
 
 import javax.swing.JPanel;
 
@@ -23,7 +25,7 @@ public class PlaylistViewPanel extends JPanel {
 
     public PlaylistViewPanel(){
 
-        setBackground(Color.white);
+        setBackground(Color.WHITE);
 
         setLayout(new BorderLayout());
 
@@ -41,6 +43,8 @@ public class PlaylistViewPanel extends JPanel {
        
 
         add(topPanel, BorderLayout.NORTH);
+        add(new SongListPanel(), BorderLayout.CENTER);
+
 
        
 

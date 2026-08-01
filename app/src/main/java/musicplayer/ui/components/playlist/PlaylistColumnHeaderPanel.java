@@ -38,8 +38,8 @@ public class PlaylistColumnHeaderPanel extends JPanel {
         GridBagConstraints gbc = new GridBagConstraints();
 
         gbc.gridy = 0;
-        gbc.insets = new Insets(0, 10, 0, 10);
         gbc.anchor = GridBagConstraints.WEST;
+        gbc.insets = new Insets(0, 10, 0, 10);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
         // #
