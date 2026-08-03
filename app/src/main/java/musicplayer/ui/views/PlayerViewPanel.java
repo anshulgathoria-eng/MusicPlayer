@@ -39,7 +39,7 @@ public class PlayerViewPanel extends JPanel{
     setPreferredSize(new Dimension(0,133));
 
     setBorder(BorderFactory.createEmptyBorder(
-        14, 34, 10, 37
+        14, 34, 10, 19
     ));
 
 
