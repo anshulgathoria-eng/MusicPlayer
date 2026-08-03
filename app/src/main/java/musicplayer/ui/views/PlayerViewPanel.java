@@ -12,6 +12,9 @@ import java.awt.GridBagLayout;
 
 import java.awt.GridBagConstraints;
 
+import musicplayer.ui.layout.PlayerTopSectionPanel;
+import musicplayer.ui.layout.PlayerBottomSectionPanel;
+
 
 
 
@@ -29,7 +32,7 @@ public class PlayerViewPanel extends JPanel{
 
     
 
-    setBackground(Color.blue);
+    setBackground(Color.WHITE);
 
     
 
@@ -39,27 +42,22 @@ public class PlayerViewPanel extends JPanel{
         14, 34, 10, 37
     ));
 
-    JPanel topSection = new JPanel();
-    JPanel bottomSection = new JPanel();
-
-    topSection.setBackground(Color.YELLOW);
-    bottomSection.setBackground(Color.GREEN);
 
     gbc.gridx = 0;
     gbc.gridy = 0;
 
     gbc.weightx = 1.0;
-    gbc.weighty = 0.70;
+    gbc.weighty = 0;
 
     gbc.fill = GridBagConstraints.BOTH;
 
-    add(topSection, gbc);
+    add(new PlayerTopSectionPanel(), gbc);
 
     gbc.gridy = 1;
 
-    gbc.weighty = 0.30;
+    gbc.weighty = 0.100;
 
-    add(bottomSection, gbc);
+    add(new PlayerBottomSectionPanel(), gbc);
     
 
     

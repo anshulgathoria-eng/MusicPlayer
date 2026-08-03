@@ -1,5 +1,5 @@
 package musicplayer.ui.components.Player;
 
-public class SeekPanel {
+public class SeekBarPanel {
     
 }
