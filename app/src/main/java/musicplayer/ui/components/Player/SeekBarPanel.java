@@ -10,6 +10,7 @@ import javax.swing.JSlider;
 
 
 import musicplayer.ui.components.common.ModernSliderUI;
+import musicplayer.ui.components.common.SliderListener;
 
 
 
@@ -21,20 +22,22 @@ public class SeekBarPanel extends JPanel {
 
         setLayout(new BorderLayout());
 
-        JSlider seekSlider = new JSlider();
+        ModernSliderUI seekSlider = new ModernSliderUI();
+
+        seekSlider.addSliderListener(new SliderListener() {
+
+        @Override
+         public void valueChanged(int newValue) {
+         System.out.println(newValue);
+         }
+        });
 
         add(seekSlider, BorderLayout.CENTER);
+        
+        
+        
 
-        seekSlider.setMinimum(0);
-        seekSlider.setValue(10);
-        seekSlider.setMaximum(100);
-        seekSlider.setFocusable(false);
-
-        seekSlider.setBackground(Color.WHITE);
-
-        seekSlider.setOpaque(false);
-
-        seekSlider.setUI(new ModernSliderUI(seekSlider));
+        
 
 
 

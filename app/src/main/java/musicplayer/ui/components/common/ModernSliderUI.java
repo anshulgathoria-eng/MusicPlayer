@@ -1,114 +1,219 @@
 package musicplayer.ui.components.common;
 
 import javax.swing.JComponent;
-import javax.swing.JSlider;
-import javax.swing.plaf.basic.BasicSliderUI;
 
+import java.awt.Dimension;
 import java.awt.Graphics;
-
-
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.Color;
 
-import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
+import java.util.ArrayList;
+import java.util.List;
 
-public class ModernSliderUI extends BasicSliderUI {
+public class ModernSliderUI extends JComponent {
 
-   
+    // Slider Model
+    private int minimum = 0;
+    private int maximum = 250;
+    private int value = 25;
 
+    // Appearance
+    private int trackHeight = 4;
 
-   public ModernSliderUI(JSlider slider) {
-    super(slider);
-   }
+    private int thumbWidth = 6;
+    private int thumbHeight = 20;
+    private int thumbArc = 3;
 
-   @Override
-   public void paintFocus(Graphics g) {
-    // No focus painting
-   }
+    private Color trackColor = new Color(217, 217, 217);
+    private Color progressColor = Color.ORANGE;
+    private Color thumbColor = Color.BLACK;
 
+    // Listeners
+    private final List<SliderListener> listeners = new ArrayList<>();
 
+    public ModernSliderUI() {
 
+        setPreferredSize(new Dimension(300, 20));
 
+        MouseAdapter mouseHandler = new MouseAdapter() {
 
+            @Override
+            public void mousePressed(MouseEvent e) {
+                updateValue(e.getX());
+            }
 
-   @Override
-   public void paintTrack(Graphics g) {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                updateValue(e.getX());
+            }
+        };
 
+        addMouseListener(mouseHandler);
+        addMouseMotionListener(mouseHandler);
+    }
 
+    // --------------------------
+    // Listener API
+    // --------------------------
 
-    Graphics2D g2 = (Graphics2D) g.create();
+    public void addSliderListener(SliderListener listener) {
+        listeners.add(listener);
+    }
 
-    g2.setRenderingHint(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON
-    );
+    // --------------------------
+    // Slider Model
+    // --------------------------
 
-    g2.setColor(new Color(217, 217, 217));
+    public int getValue() {
+        return value;
+    }
 
-    g2.fillRoundRect(
-            trackRect.x,
-            trackRect.y + trackRect.height / 2 - 2,
-            trackRect.width,
-            4,
-            4,
-            4
-    );
+    public void setValue(int value) {
 
-    g2.dispose();
+        this.value = Math.max(minimum, Math.min(value, maximum));
 
+        for (SliderListener listener : listeners) {
+            listener.valueChanged(this.value);
+        }
 
-      
+        repaint();
+    }
 
+    public int getMinimum() {
+        return minimum;
+    }
 
+    public void setMinimum(int minimum) {
+        this.minimum = minimum;
+        repaint();
+    }
 
-   }
+    public int getMaximum() {
+        return maximum;
+    }
 
-      @Override
-      protected Dimension getThumbSize() {
-      return new Dimension(5, 20);
-     }
+    public void setMaximum(int maximum) {
+        this.maximum = maximum;
+        repaint();
+    }
 
-     // by this function we are basically replacing it with our own graphics over the default slider thumb 
+    // --------------------------
+    // Appearance API
+    // --------------------------
 
-     @Override
-     public void paintThumb(Graphics g){
+    public void setTrackColor(Color trackColor) {
+        this.trackColor = trackColor;
+        repaint();
+    }
 
+    public void setProgressColor(Color progressColor) {
+        this.progressColor = progressColor;
+        repaint();
+    }
+
+    public void setThumbColor(Color thumbColor) {
+        this.thumbColor = thumbColor;
+        repaint();
+    }
+
+    public void setTrackHeight(int trackHeight) {
+        this.trackHeight = trackHeight;
+        repaint();
+    }
+
+    public void setThumbWidth(int thumbWidth) {
+        this.thumbWidth = thumbWidth;
+        repaint();
+    }
+
+    public void setThumbHeight(int thumbHeight) {
+        this.thumbHeight = thumbHeight;
+        repaint();
+    }
+
+    public void setThumbArc(int thumbArc) {
+        this.thumbArc = thumbArc;
+        repaint();
+    }
+
+    // --------------------------
+    // Painting
+    // --------------------------
+
+    @Override
+    protected void paintComponent(Graphics g) {
+
+        super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D) g.create();
 
-        g2.setColor(Color.BLACK);
+        g2.setRenderingHint(
+                RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON);
 
-        g2.fillRoundRect(thumbRect.x, thumbRect.y, thumbRect.width, thumbRect.height, 0, 0);
+        double percentage =
+                (double) (value - minimum) / (maximum - minimum);
 
+        int progressWidth = (int) (percentage * getWidth());
 
+        // Track
 
-     g2.dispose();
+        g2.setColor(trackColor);
 
-     // dispose is to release the copy .
+        g2.fillRoundRect(
+                0,
+                getHeight() / 2 - trackHeight / 2,
+                getWidth(),
+                trackHeight,
+                trackHeight,
+                trackHeight);
 
+        // Progress
 
-     }
+        g2.setColor(progressColor);
 
-     
-    @Override
-    public void paint(Graphics g, JComponent c) {
-    Graphics2D g2 = (Graphics2D) g.create();
+        g2.fillRoundRect(
+                0,
+                getHeight() / 2 - trackHeight / 2,
+                progressWidth,
+                trackHeight,
+                trackHeight,
+                trackHeight);
 
-    g2.setRenderingHint(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
+        // Thumb
 
-    super.paint(g2, c);
+        int thumbX = progressWidth - thumbWidth / 2;
+        thumbX = Math.max(0, Math.min(thumbX, getWidth() - thumbWidth));
+        int maxThumbX = getWidth() - thumbWidth - 2;
+        
+        g2.setColor(thumbColor);
 
-    g2.dispose();
-   }
+        g2.fillRoundRect(
+                thumbX,
+                getHeight() / 2 - thumbHeight / 2,
+                thumbWidth,
+                thumbHeight,
+                thumbArc,
+                thumbArc);
 
-     
+        g2.dispose();
+    }
 
+    // --------------------------
+    // Internal
+    // --------------------------
 
+    private void updateValue(int mouseX) {
 
-  
-    
+        mouseX = Math.max(0, Math.min(mouseX, getWidth()));
+
+        int newValue =
+                (int) ((double) mouseX / getWidth() * maximum);
+
+        setValue(newValue);
+    }
 }

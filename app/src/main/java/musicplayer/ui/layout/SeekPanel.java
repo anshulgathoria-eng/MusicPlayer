@@ -17,7 +17,7 @@ public class SeekPanel extends JPanel {
 
     public SeekPanel(){
        
-        setBackground(Color.CYAN);
+        setBackground(Color.WHITE);
 
         setLayout(new GridBagLayout());
 
