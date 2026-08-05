@@ -24,7 +24,7 @@ public class ModernSliderUI extends JComponent {
     // Appearance
     private int trackHeight = 4;
 
-    private int thumbWidth = 6;
+    private int thumbWidth = 4;
     private int thumbHeight = 20;
     private int thumbArc = 3;
 
