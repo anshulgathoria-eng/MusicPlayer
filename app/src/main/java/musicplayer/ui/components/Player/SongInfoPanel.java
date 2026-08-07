@@ -3,6 +3,8 @@ import javax.swing.JPanel;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
 
+import java.awt.Color;
+
 
 
 
@@ -11,12 +13,12 @@ public class SongInfoPanel extends JPanel {
 
     public SongInfoPanel(){
 
-
+    
         
         
     setLayout(new BorderLayout());
 
-     add(new MusicTitlePanel(), BorderLayout.CENTER);
+    add(new MusicTitlePanel(), BorderLayout.CENTER);
         
 
 

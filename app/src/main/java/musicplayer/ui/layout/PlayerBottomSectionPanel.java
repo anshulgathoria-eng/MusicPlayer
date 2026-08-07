@@ -26,7 +26,7 @@ public class PlayerBottomSectionPanel extends JPanel {
         gbc.gridx = 0;
         gbc.gridy = 0;
 
-        gbc.weightx = 1.0;
+        gbc.weightx = 0.79;
         gbc.weighty = 1.0;
 
         gbc.fill = GridBagConstraints.BOTH;
