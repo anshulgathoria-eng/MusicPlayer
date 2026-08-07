@@ -9,7 +9,7 @@ public class PlayerBottomSectionPanel extends JPanel {
 
     public PlayerBottomSectionPanel(){
 
-        setBackground(Color.GREEN);
+        setBackground(Color.WHITE);
 
 
 

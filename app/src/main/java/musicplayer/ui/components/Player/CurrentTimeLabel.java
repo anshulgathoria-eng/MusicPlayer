@@ -15,7 +15,8 @@ public class CurrentTimeLabel extends JLabel {
 
         setText("00:00");
 
-        
+        setFont(FontManager.light(10));
+
 
 
 

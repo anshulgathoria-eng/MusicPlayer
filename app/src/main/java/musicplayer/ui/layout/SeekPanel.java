@@ -15,6 +15,8 @@ import java.awt.GridBagConstraints;
 
 
 
+
+
 public class SeekPanel extends JPanel {
 
     public SeekPanel(){
@@ -53,6 +55,9 @@ public class SeekPanel extends JPanel {
         
 
         add(new CurrentTimeLabel(), gbc);
+        
+
+
 
         gbc.gridx = 1;
         gbc.anchor = GridBagConstraints.EAST;
